@@ -1,0 +1,42 @@
+:root {
+  accent-color: #235789;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.input-code::-webkit-outer-spin-button,
+.input-code::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  /* Opcionalmente, puedes ajustar el margen según tus necesidades */
+}
+
+.ReactModal__Overlay {
+  z-index: 999;
+  background-color: transparent !important;
+}
+
+.ck-editor__editable {
+  height: 250px;
+  font-size: 12px;
+}
+
+/* Estilos para personalizar la barra de desplazamiento */
+.ck-editor__editable::-webkit-scrollbar {
+  width: 5px;
+}
+
+.ck-editor__editable::-webkit-scrollbar-thumb {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+
+.ck-editor__editable::-webkit-scrollbar-thumb:hover {
+  background-color: #c0c0c0;
+}
+
+.ck-editor__editable::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
