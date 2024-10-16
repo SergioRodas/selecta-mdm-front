@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 export const fetchCartoons = async () => {
-  const urlGetCartoons = 'http://localhost:4002/api/v1/Cartones';
+  const urlGetCartoons = `${API_URL}/Cartones`;
 
   try {
     const response = await axios.get(urlGetCartoons);

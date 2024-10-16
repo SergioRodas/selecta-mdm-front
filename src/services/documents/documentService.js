@@ -2,9 +2,11 @@ import axios from 'axios';
 
 import useAuthStore from '../../store/authStore.js';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 export const fetchDocuments = async () => {
   const { token } = useAuthStore.getState();
-  const requestUrl = 'http://localhost:4002/api/v1/FilterDoc';
+  const requestUrl = `${API_URL}/FilterDoc`;
   try {
     const response = await axios.get(requestUrl, {
       headers: {
@@ -20,7 +22,7 @@ export const fetchDocuments = async () => {
 
 export const fetchDocumentName = async () => {
   const { token } = useAuthStore.getState();
-  const requestUrl = 'http://localhost:4002/api/v1/documents';
+  const requestUrl = `${API_URL}/documents`;
 
   try {
     const response = await axios.get(requestUrl, {
@@ -37,7 +39,7 @@ export const fetchDocumentName = async () => {
 
 export const fetchDocumentDetails = async (documentId, selectedDate) => {
   const { token } = useAuthStore.getState();
-  let requestUrl = `http://localhost:4002/api/v1/FilterDocDetails/${documentId}`;
+  let requestUrl = `${API_URL}/FilterDocDetails/${documentId}`;
   if (selectedDate) {
     requestUrl += `?date=${selectedDate}`;
   }
@@ -58,7 +60,7 @@ export const fetchDocumentDetails = async (documentId, selectedDate) => {
 
 export const fetchDocumentStyles = async (documentId, date) => {
   const { token } = useAuthStore.getState();
-  const urlGetStyles = 'http://localhost:4002/api/v1/document/styles';
+  const urlGetStyles = `${API_URL}/document/styles`;
 
   try {
     const response = await axios.post(

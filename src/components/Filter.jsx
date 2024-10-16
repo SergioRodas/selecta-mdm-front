@@ -75,7 +75,7 @@ export const DocumentFilter = ({
     onDateSelect(selectedDate);
     setLoading(true);
     const documentId = selectedDocument.ID_DOCUMENTO;
-    const requestUrl = `http://localhost:4002/api/v1/FilterDocDetails/${documentId}?date=${selectedDate}`;
+    const requestUrl = `${process.env.REACT_APP_API_URL}/FilterDocDetails/${documentId}?date=${selectedDate}`;
 
     axios
       .get(requestUrl)

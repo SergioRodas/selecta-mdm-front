@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-export const urlGetPrimerasPlanas =
-  'http://localhost:4002/api/v1/PrimerasPlanas';
-export const urlGetImages = 'http://localhost:4002/api/v1/Images';
+const API_URL = process.env.REACT_APP_API_URL;
+
+export const urlGetFrontPages = `${API_URL}/PrimerasPlanas`;
+export const urlGetImages = `${API_URL}/Images`;
 
 export const obtenerURLLogo = (note) => {
   if (!note.MEDIO) {
@@ -19,14 +20,14 @@ export const obtenerURLLogo = (note) => {
 };
 
 export const fetchPrimerasPlanas = async () => {
-  const response = await axios.get(urlGetPrimerasPlanas);
+  const response = await axios.get(urlGetFrontPages);
   return response.data;
 };
 
 export const fetchPrimerasPlanasWithImages = async () => {
   try {
     const [resPrimerasPlanas, resImages] = await Promise.all([
-      axios.get(urlGetPrimerasPlanas),
+      axios.get(urlGetFrontPages),
       axios.get(urlGetImages),
     ]);
 

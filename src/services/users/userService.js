@@ -2,8 +2,10 @@ import axios from 'axios';
 
 import useAuthStore from '../../store/authStore.js';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 export const login = async (email, password) => {
-  const requestUrl = 'http://localhost:4002/api/v1/users/login';
+  const requestUrl = `${API_URL}/users/login`;
 
   try {
     const response = await axios.post(requestUrl, { email, password });
